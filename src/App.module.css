@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 360px;
+  max-width: 560px;
+  padding: 10px;
+  margin: 0 auto;
+  min-height: 200px;
+  align-self: center;
+  flex-grow: 1;
+}
+
+.header {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
