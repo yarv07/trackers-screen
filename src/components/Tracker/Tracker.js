@@ -14,11 +14,6 @@ const Tracker = ({item: {id, name, time, isTimerActive, snapShot}}) => {
   useEffect(() => {
     const now = +DateTime.now().toSeconds().toFixed(0);
     if (isActive) {
-      console.log('now: ', now)
-      console.log('snapShotTik: ', snapShotTik)
-      console.log('time.seconds: ', time.seconds)
-      console.log('now - snapShotTik: ', now - snapShotTik)
-      console.log('summ: ', Math.ceil(now - snapShotTik + time.seconds))
       setTracker({seconds: now - snapShotTik + time.seconds})
     }
   }, [])
@@ -26,6 +21,7 @@ const Tracker = ({item: {id, name, time, isTimerActive, snapShot}}) => {
   useEffect(() => {
     let timerId;
     const now = +DateTime.now().toSeconds().toFixed(0);
+    
     dispatch(updateTracker({id, name, time: tracker, isTimerActive: isActive, snapShot: now}))
     if (isActive) {
       timerId = setInterval(() => {
